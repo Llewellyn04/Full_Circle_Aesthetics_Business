@@ -37,8 +37,8 @@ h1, h2, h3 {
 }
 
 .logo-img {
-    height: 50px; /* Default logo size */
-    width: auto;
+    height: auto;
+    width: 10%; /* Use percentage for responsive width */
     max-width: 100%; /* Ensure it doesn't exceed container width */
     display: block; /* Ensure proper rendering */
 }
@@ -530,7 +530,7 @@ footer {
     }
 
     .logo-img {
-        height: 40px; /* Reduce logo size for mobile */
+        width: 15%; /* Adjust width for mobile */
     }
 
     /* Hero Section */
@@ -694,7 +694,7 @@ footer {
     }
 
     .logo-img {
-        height: 30px; /* Further reduce logo size for smaller screens */
+        width: 20%; /* Further adjust width for smaller screens */
     }
 
     .logo-text {
