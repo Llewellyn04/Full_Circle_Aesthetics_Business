@@ -33,12 +33,11 @@ h1, h2, h3 {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px; /* Reduced gap for better fit on smaller screens */
-    flex-shrink: 0; /* Prevent the logo container from shrinking too much */
+    gap: 10px;
 }
 
 .logo-img {
-    height: 50px; /* Default logo size */
+    height: 50px; /* Larger logo size while keeping nav height normal */
     width: auto;
 }
 
@@ -47,7 +46,6 @@ h1, h2, h3 {
     font-weight: 700;
     color: #4a2c2a;
     font-family: 'Playfair Display', serif;
-    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .hamburger {
@@ -500,11 +498,6 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Navigation */
-    .navbar {
-        padding: 10px 20px; /* Reduced padding for better fit */
-        height: 60px; /* Slightly shorter nav height for mobile */
-    }
-
     .hamburger {
         display: block;
     }
@@ -513,7 +506,7 @@ footer {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Adjusted to match new nav height */
+        top: 70px;
         left: 0;
         width: 100%;
         background: #f5e8dd;
@@ -532,18 +525,6 @@ footer {
 
     .nav-links a {
         font-size: 16px; /* Larger font for better readability */
-    }
-
-    .logo-container {
-        gap: 6px; /* Further reduce gap for mobile */
-    }
-
-    .logo-img {
-        height: 35px; /* Slightly smaller logo for better fit */
-    }
-
-    .logo-text {
-        font-size: 18px; /* Adjusted text size for better fit */
     }
 
     /* Hero Section */
@@ -612,7 +593,16 @@ footer {
     }
 
     .service-item .overlay {
-        font-size: 14px; /* Smaller font for mobile */
+        position: static; /* Make overlay static */
+        transform: translateY(0); /* Ensure it's always visible */
+        background: none; /* Remove background color */
+        color: #4a2c2a; /* Match text color to design */
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 10px 0; /* Adjust padding for better spacing */
+    }
+
+    .service-item:hover .overlay {
+        transform: none; /* Disable hover effect */
     }
 
     .service-item h3 {
@@ -694,24 +684,15 @@ footer {
 @media (max-width: 480px) {
     /* Navigation */
     .navbar {
-        padding: 8px 15px; /* Further reduced padding for smaller screens */
-        height: 50px; /* Shorter nav height for very small screens */
-    }
-
-    .nav-links {
-        top: 50px; /* Adjusted to match new nav height */
-    }
-
-    .logo-container {
-        gap: 5px; /* Even smaller gap for very small screens */
+        padding: 10px 20px;
     }
 
     .logo-img {
-        height: 30px; /* Further reduced logo size */
+        height: 40px;
     }
 
     .logo-text {
-        font-size: 16px; /* Further reduced text size */
+        font-size: 20px;
     }
 
     .nav-links a {
