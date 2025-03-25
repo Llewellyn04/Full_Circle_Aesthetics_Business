@@ -527,6 +527,15 @@ footer {
         font-size: 16px; /* Larger font for better readability */
     }
 
+    .logo-img {
+        height: 40px; /* Reduce logo size for mobile */
+        width: auto;
+    }
+
+    .logo-text {
+        font-size: 18px; /* Adjust text size for better fit */
+    }
+
     /* Hero Section */
     .hero {
         height: 80vh; /* Slightly shorter on mobile for better scrolling */
@@ -593,16 +602,7 @@ footer {
     }
 
     .service-item .overlay {
-        position: static; /* Make overlay static */
-        transform: translateY(0); /* Ensure it's always visible */
-        background: none; /* Remove background color */
-        color: #4a2c2a; /* Match text color to design */
-        font-size: 14px; /* Adjust font size for mobile */
-        padding: 10px 0; /* Adjust padding for better spacing */
-    }
-
-    .service-item:hover .overlay {
-        transform: none; /* Disable hover effect */
+        font-size: 14px; /* Smaller font for mobile */
     }
 
     .service-item h3 {
@@ -685,6 +685,14 @@ footer {
     /* Navigation */
     .navbar {
         padding: 10px 20px;
+    }
+
+    .logo-img {
+        height: 30px; /* Further reduce logo size for smaller screens */
+    }
+
+    .logo-text {
+        font-size: 16px; /* Adjust text size for smaller screens */
     }
 
     .logo-img {
