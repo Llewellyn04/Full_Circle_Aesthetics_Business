@@ -37,8 +37,10 @@ h1, h2, h3 {
 }
 
 .logo-img {
-    height: 50px; /* Larger logo size while keeping nav height normal */
+    height: 50px; /* Default logo size */
     width: auto;
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    display: block; /* Ensure proper rendering */
 }
 
 .logo-text {
@@ -527,6 +529,10 @@ footer {
         font-size: 16px; /* Larger font for better readability */
     }
 
+    .logo-img {
+        height: 40px; /* Reduce logo size for mobile */
+    }
+
     /* Hero Section */
     .hero {
         height: 80vh; /* Slightly shorter on mobile for better scrolling */
@@ -688,7 +694,7 @@ footer {
     }
 
     .logo-img {
-        height: 40px;
+        height: 30px; /* Further reduce logo size for smaller screens */
     }
 
     .logo-text {
