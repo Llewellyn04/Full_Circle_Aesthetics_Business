@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>git status
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo-container">
@@ -21,6 +21,7 @@
             <li><a href="index.html#services">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -50,7 +51,7 @@
                     <div class="overlay"><p>Laser Therapy</p></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1515377905703-602d1310d84d?q=80&w=2070&auto=format&fit=crop" alt="Clinic Interior">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling">
                     <div class="overlay"><p>Clinic Interior</p></div>
                 </div>
                 <div class="gallery-item">
@@ -58,7 +59,7 @@
                     <div class="overlay"><p>Spa Vibes</p></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600334089576-1b00b6e4024a?q=80&w=2070&auto=format&fit=crop" alt="Client Care">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling">
                     <div class="overlay"><p>Client Care</p></div>
                 </div>
             </div>
@@ -70,7 +71,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-container">
             <div class="footer-contact">
                 <h3>Contact Us</h3>
@@ -88,5 +89,23 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const section = document.querySelector(href);
+                    const offset = document.querySelector('.navbar').offsetHeight; // Dynamically get navbar height
+                    const sectionPosition = section.offsetTop - offset;
+                    window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

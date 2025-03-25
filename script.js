@@ -5,7 +5,9 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
         if (href.startsWith('#')) {
             e.preventDefault();
             const section = document.querySelector(href);
-            section.scrollIntoView({ behavior: 'smooth' });
+            const offset = document.querySelector('.navbar').offsetHeight; // Dynamically get navbar height
+            const sectionPosition = section.offsetTop - offset;
+            window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
             if (window.innerWidth <= 768) {
                 document.querySelector('.nav-links').classList.remove('active');
             }

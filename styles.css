@@ -98,10 +98,20 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .hero-content {
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo {
+    width: 530px; /* Large logo size */
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .hero-content h1 {
@@ -149,7 +159,7 @@ h2 {
 
 h2::after {
     content: '';
-    width: 50px;
+    width: 100px;
     height: 3px;
     background: #d4a373;
     position: absolute;
@@ -194,10 +204,6 @@ h2::after {
     transition: transform 0.3s ease;
 }
 
-.about-image img:hover {
-    transform: scale(1.03);
-}
-
 /* Services Section */
 .services {
     background: #f5e8dd;
@@ -210,19 +216,46 @@ h2::after {
 }
 
 .service-item {
+    position: relative; /* Required for overlay positioning */
     text-align: center;
     transition: transform 0.3s;
+    overflow: hidden; /* Ensure overlay doesn't overflow */
+    border-radius: 10px; /* Match gallery item style */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match gallery item style */
 }
 
 .service-item:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05); /* Match gallery hover effect */
 }
 
 .service-item img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.5s ease; /* Match gallery image hover effect */
+}
+
+.service-item:hover img {
+    transform: scale(1.1); /* Match gallery image zoom effect */
+}
+
+.service-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(74, 44, 42, 0.8); /* Match gallery overlay style */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 16px;
+}
+
+.service-item:hover .overlay {
+    transform: translateY(0); /* Show overlay on hover */
 }
 
 .service-item h3 {
@@ -238,41 +271,10 @@ h2::after {
 
 .why-us .intro {
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
     text-align: center;
     font-size: 18px;
     color: #555;
-}
-
-.values-grid {
-    display: flex;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.value-item {
-    background: #f5e8dd;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.value-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.value-item h3 {
-    font-size: 22px;
-    color: #4a2c2a;
-    margin-bottom: 10px;
-}
-
-.value-item p {
-    font-size: 16px;
-    color: #666;
 }
 
 /* Gallery Section */
@@ -329,7 +331,22 @@ h2::after {
     transform: translateY(0);
 }
 
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
 
+.gallery-modal.active {
+    display: flex;
+}
 
 .modal-content {
     max-width: 90%;
@@ -358,7 +375,7 @@ h2::after {
     }
 }
 
-/* Mission, Vision, Values Section */
+/* Mission and Vision Section */
 .mission-vision {
     background: #f5e8dd;
 }
@@ -385,6 +402,45 @@ h2::after {
 .mv-item h3 {
     color: #4a2c2a;
     margin-bottom: 10px;
+}
+
+/* Values Section */
+.values {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.values-grid {
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.value-item {
+    background: #f5e8dd;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 200px; /* Allow items to grow and shrink, with a minimum width */
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-item h3 {
+    font-size: 22px;
+    color: #4a2c2a;
+    margin-bottom: 10px;
+}
+
+.value-item p {
+    font-size: 16px;
+    color: #666;
 }
 
 /* Footer */
@@ -430,6 +486,7 @@ footer {
 .footer-map iframe {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensure map scales properly on mobile */
 }
 
 .footer-copy {
@@ -440,6 +497,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Navigation */
     .hamburger {
         display: block;
     }
@@ -453,6 +511,7 @@ footer {
         width: 100%;
         background: #f5e8dd;
         padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
@@ -460,20 +519,52 @@ footer {
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 15px 0; /* Increased spacing for better touch targets */
         text-align: center;
     }
 
+    .nav-links a {
+        font-size: 16px; /* Larger font for better readability */
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 80vh; /* Slightly shorter on mobile for better scrolling */
+    }
+
+    .hero-logo {
+        width: 300px; /* Reduced size for better fit */
+    }
+
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 28px; /* Smaller heading for mobile */
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 16px; /* Smaller text for mobile */
+    }
+
+    .btn {
+        padding: 10px 25px; /* Slightly smaller button for mobile */
+        font-size: 14px;
+    }
+
+    /* General Section Styling */
+    section {
+        padding: 60px 0; /* Reduced padding for mobile */
     }
 
     h2 {
-        font-size: 28px;
+        font-size: 28px; /* Smaller heading for mobile */
+    }
+
+    h2::after {
+        width: 80px; /* Slightly smaller underline */
+    }
+
+    /* About Section */
+    .about {
+        padding: 60px 0;
     }
 
     .about-content {
@@ -485,12 +576,80 @@ footer {
         font-size: 16px;
     }
 
-    .service-grid, .gallery-grid, .mv-grid, .values-grid {
-        grid-template-columns: 1fr;
+    .about-image img {
+        width: 100%;
+        max-height: 300px; /* Limit image height on mobile */
+        object-fit: cover;
+    }
+
+    /* Services Section */
+    .service-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
+    .service-item img {
+        height: 180px; /* Slightly smaller images on mobile */
+    }
+
+    .service-item .overlay {
+        position: static; /* Make overlay static */
+        transform: translateY(0); /* Ensure it's always visible */
+        background: none; /* Remove background color */
+        color: #4a2c2a; /* Match text color to design */
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 10px 0; /* Adjust padding for better spacing */
+    }
+
+    .service-item:hover .overlay {
+        transform: none; /* Disable hover effect */
+    }
+
+    .service-item h3 {
+        font-size: 18px;
+    }
+
+    /* Why Choose Us Section */
+    .why-us {
+        padding: 60px 0;
     }
 
     .why-us .intro {
         font-size: 16px;
+        padding: 0 10px; /* Add padding for better readability */
+    }
+
+    /* Mission and Vision Section */
+    .mv-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
+    .mv-item {
+        padding: 15px;
+    }
+
+    .mv-item h3 {
+        font-size: 20px;
+    }
+
+    .mv-item p {
+        font-size: 14px;
+    }
+
+    /* Values Section */
+    .values {
+        padding: 60px 0;
+    }
+
+    .values-grid {
+        flex-direction: column; /* Stack items vertically on mobile */
+        gap: 20px;
+    }
+
+    .value-item {
+        flex: 1 1 auto; /* Allow items to take full width */
+        max-width: 100%; /* Ensure items don't exceed container width */
     }
 
     .value-item h3 {
@@ -501,13 +660,29 @@ footer {
         font-size: 14px;
     }
 
+    /* Footer */
     .footer-container {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
+    }
+
+    .footer-contact, .footer-map {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact p, .footer-map p {
+        font-size: 14px;
+    }
+
+    .footer-map iframe {
+        height: 150px; /* Smaller map height on mobile */
     }
 }
 
 @media (max-width: 480px) {
+    /* Navigation */
     .navbar {
         padding: 10px 20px;
     }
@@ -520,35 +695,116 @@ footer {
         font-size: 20px;
     }
 
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 70vh; /* Even shorter for very small screens */
+    }
+
+    .hero-logo {
+        width: 200px; /* Further reduced size */
+    }
+
     .hero-content h1 {
         font-size: 24px;
     }
 
-    .btn {
-        padding: 10px 20px;
+    .hero-content p {
+        font-size: 14px;
     }
 
+    .btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    /* General Section Styling */
+    section {
+        padding: 40px 0; /* Further reduced padding */
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h2::after {
+        width: 60px;
+    }
+
+    /* About Section */
     .about {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .about-text p {
         font-size: 14px;
     }
 
-    .gallery-item img {
-        height: 200px;
+    .about-image img {
+        max-height: 250px;
     }
 
+    /* Services Section */
+    .service-item img {
+        height: 150px;
+    }
+
+    .service-item .overlay {
+        font-size: 12px; /* Even smaller font for very small screens */
+    }
+
+    .service-item h3 {
+        font-size: 16px;
+    }
+
+    /* Why Choose Us Section */
     .why-us {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .why-us .intro {
         font-size: 14px;
     }
 
-    .footer-contact, .footer-map {
-        min-width: 100%;
+    /* Mission and Vision Section */
+    .mv-item h3 {
+        font-size: 18px;
+    }
+
+    .mv-item p {
+        font-size: 13px;
+    }
+
+    /* Values Section */
+    .values {
+        padding: 40px 0;
+    }
+
+    .value-item h3 {
+        font-size: 18px;
+    }
+
+    .value-item p {
+        font-size: 13px;
+    }
+
+    /* Footer */
+    .footer-contact h3, .footer-map h3 {
+        font-size: 18px;
+    }
+
+    .footer-contact p, .footer-map p {
+        font-size: 13px;
+    }
+
+    .footer-map iframe {
+        height: 120px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
     }
 }
