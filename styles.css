@@ -33,8 +33,8 @@ h1, h2, h3 {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px; /* Default gap */
-    flex-shrink: 0; /* Prevent shrinking too much */
+    gap: 8px; /* Reduced gap for better fit on smaller screens */
+    flex-shrink: 0; /* Prevent the logo container from shrinking too much */
 }
 
 .logo-img {
@@ -258,6 +258,11 @@ h2::after {
 
 .service-item:hover .overlay {
     transform: translateY(0); /* Show overlay on hover */
+}
+
+.service-item h3 {
+    margin-top: 15px;
+    color: #4a2c2a;
 }
 
 /* Why Choose Us Section */
@@ -496,7 +501,7 @@ footer {
 @media (max-width: 768px) {
     /* Navigation */
     .navbar {
-        padding: 10px 15px; /* Reduced padding for better fit */
+        padding: 10px 20px; /* Reduced padding for better fit */
         height: 60px; /* Slightly shorter nav height for mobile */
     }
 
@@ -530,16 +535,15 @@ footer {
     }
 
     .logo-container {
-        gap: 5px; /* Reduced gap for mobile */
-        align-items: center;
+        gap: 6px; /* Further reduce gap for mobile */
     }
 
     .logo-img {
-        height: 30px; /* Smaller logo for mobile */
+        height: 35px; /* Slightly smaller logo for better fit */
     }
 
     .logo-text {
-        font-size: 16px; /* Smaller text for mobile */
+        font-size: 18px; /* Adjusted text size for better fit */
     }
 
     /* Hero Section */
@@ -609,6 +613,10 @@ footer {
 
     .service-item .overlay {
         font-size: 14px; /* Smaller font for mobile */
+    }
+
+    .service-item h3 {
+        font-size: 18px;
     }
 
     /* Why Choose Us Section */
@@ -686,33 +694,24 @@ footer {
 @media (max-width: 480px) {
     /* Navigation */
     .navbar {
-        padding: 8px 10px; /* Further reduced padding for smaller screens */
-        height: 70px; /* Increased height to accommodate stacked layout */
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        padding: 8px 15px; /* Further reduced padding for smaller screens */
+        height: 50px; /* Shorter nav height for very small screens */
     }
 
     .nav-links {
-        top: 70px; /* Adjusted to match new nav height */
+        top: 50px; /* Adjusted to match new nav height */
     }
 
     .logo-container {
-        flex-direction: column; /* Stack logo and text vertically on very small screens */
-        gap: 2px; /* Small gap between stacked elements */
-        align-items: flex-start; /* Align to the left */
-        margin-right: 10px; /* Ensure space for the hamburger */
+        gap: 5px; /* Even smaller gap for very small screens */
     }
 
     .logo-img {
-        height: 25px; /* Even smaller logo for very small screens */
+        height: 30px; /* Further reduced logo size */
     }
 
     .logo-text {
-        font-size: 14px; /* Even smaller text for very small screens */
-    }
-
-    .hamburger {
-        font-size: 24px; /* Slightly smaller hamburger icon */
-        align-self: center; /* Center the hamburger vertically */
+        font-size: 16px; /* Further reduced text size */
     }
 
     .nav-links a {
@@ -774,6 +773,10 @@ footer {
 
     .service-item .overlay {
         font-size: 12px; /* Even smaller font for very small screens */
+    }
+
+    .service-item h3 {
+        font-size: 16px;
     }
 
     /* Why Choose Us Section */
