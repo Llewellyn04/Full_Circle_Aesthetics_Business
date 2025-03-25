@@ -33,11 +33,12 @@ h1, h2, h3 {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* Reduced gap for better fit on smaller screens */
+    flex-shrink: 0; /* Prevent the logo container from shrinking too much */
 }
 
 .logo-img {
-    height: 50px; /* Larger logo size while keeping nav height normal */
+    height: 50px; /* Default logo size */
     width: auto;
 }
 
@@ -46,6 +47,7 @@ h1, h2, h3 {
     font-weight: 700;
     color: #4a2c2a;
     font-family: 'Playfair Display', serif;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .hamburger {
@@ -230,7 +232,7 @@ h2::after {
 
 .service-item img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.5s ease; /* Match gallery image hover effect */
@@ -498,6 +500,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Navigation */
+    .navbar {
+        padding: 10px 20px; /* Reduced padding for better fit */
+        height: 60px; /* Slightly shorter nav height for mobile */
+    }
+
     .hamburger {
         display: block;
     }
@@ -506,7 +513,7 @@ footer {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px; /* Adjusted to match new nav height */
         left: 0;
         width: 100%;
         background: #f5e8dd;
@@ -527,13 +534,16 @@ footer {
         font-size: 16px; /* Larger font for better readability */
     }
 
+    .logo-container {
+        gap: 6px; /* Further reduce gap for mobile */
+    }
+
     .logo-img {
-        height: 40px; /* Reduce logo size for mobile */
-        width: auto;
+        height: 35px; /* Slightly smaller logo for better fit */
     }
 
     .logo-text {
-        font-size: 18px; /* Adjust text size for better fit */
+        font-size: 18px; /* Adjusted text size for better fit */
     }
 
     /* Hero Section */
@@ -684,23 +694,24 @@ footer {
 @media (max-width: 480px) {
     /* Navigation */
     .navbar {
-        padding: 10px 20px;
+        padding: 8px 15px; /* Further reduced padding for smaller screens */
+        height: 50px; /* Shorter nav height for very small screens */
+    }
+
+    .nav-links {
+        top: 50px; /* Adjusted to match new nav height */
+    }
+
+    .logo-container {
+        gap: 5px; /* Even smaller gap for very small screens */
     }
 
     .logo-img {
-        height: 30px; /* Further reduce logo size for smaller screens */
+        height: 30px; /* Further reduced logo size */
     }
 
     .logo-text {
-        font-size: 16px; /* Adjust text size for smaller screens */
-    }
-
-    .logo-img {
-        height: 40px;
-    }
-
-    .logo-text {
-        font-size: 20px;
+        font-size: 16px; /* Further reduced text size */
     }
 
     .nav-links a {
