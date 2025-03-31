@@ -1,6 +1,6 @@
 /* Define color variables at the root level */
 :root {
-    --black: #1C2526; /* Updated black */
+    --black: #1b1b1b; /* Updated black */
     --charcoal: #2E2E2E; /* Updated dark grey */
     --grey: #666666; /* Intermediate grey for text and borders */
     --light-grey: #B0B0B0; /* Updated light grey */
@@ -72,10 +72,12 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     font-family: playfair display;
+
 }
 
 .nav-links li {
     margin-left: 30px;
+    
 }
 
 .nav-links a {
@@ -84,7 +86,7 @@ h1, h2, h3 {
     font-weight: 400;
     transition: color 0.3s;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .nav-links a:hover {
@@ -139,7 +141,7 @@ h1, h2, h3 {
 
 .btn {
     padding: 12px 30px;
-    background: var(--light-grey);
+    background: var(--white);
     color: var(--black);
     text-decoration: none;
     border-radius: 5px;
@@ -147,7 +149,7 @@ h1, h2, h3 {
 }
 
 .btn:hover {
-    background: var(--grey);
+    background: var(--light-grey);
     transform: scale(1.05);
 }
 
