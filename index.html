@@ -6,7 +6,6 @@
     <title>Full Circle Aesthetics</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <nav class="navbar">
@@ -52,75 +51,35 @@
     <section id="services" class="services">
         <div class="container">
             <h2 style="color: white;">Our Services</h2>
-            <div class="swiper-container">
-                <div class="services-navigation">
-                    <div class="services-prev">‹</div>
-                    <div class="services-next">›</div>
+            <div id="scene">
+                <div id="left-zone">
+                    <ul class="list">
+                        <li class="item">
+                            <input type="radio" id="radio_microneedling" name="basic_carousel" value="Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow." checked="checked" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" data-title="Micro needling" data-desc="Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow." data-link="micro-needling.html"/>
+                            <label class="label_microneedling" for="radio_microneedling">Micro needling</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_lazerHairRemoval" name="basic_carousel" value="Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results." data-bg="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" data-title="Lazer Hair Removal" data-desc="Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results." data-link="laser-hair-removal.html"/>
+                            <label class="label_lazerHairRemoval" for="radio_lazerHairRemoval">Lazer Hair Removal</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_chemicalPeels" name="basic_carousel" value="Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns." data-bg="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" data-title="Chemical Peels" data-desc="Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns." data-link="chemical-peels.html"/>
+                            <label class="label_ChemicalPeels" for="radio_chemicalPeels">Chemical peels</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_facials" name="basic_carousel" value="Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion." data-bg="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" data-title="Facials" data-desc="Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion." data-link="facials.html"/>
+                            <label class="label_Facials" for="radio_facials">Facials</label>
+                        </li>
+                    </ul>
                 </div>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="service-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling">
-                            </div>
-                            <div class="service-content">
-                                <div class="service-header">
-                                    <span class="service-price">R1234</span>
-                                </div>
-                                <h3>Micro Needling</h3>
-                                <p>Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow.</p>
-                                <a href="micro-needling.html" class="view-more">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Laser Hair Removal">
-                            </div>
-                            <div class="service-content">
-                                <div class="service-header">
-                                    <span class="service-price">R1234</span>
-                                </div>
-                                <h3>Laser Hair Removal</h3>
-                                <p>Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results.</p>
-                                <a href="laser-hair-removal.html" class="view-more">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Chemical Peels">
-                            </div>
-                            <div class="service-content">
-                                <div class="service-header">
-                                    <span class="service-price">R1234</span>
-                                </div>
-                                <h3>Chemical Peels</h3>
-                                <p>Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns.</p>
-                                <a href="chemical-peels.html" class="view-more">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service-item">
-                            <div class="service-image">
-                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" alt="Facials">
-                            </div>
-                            <div class="service-content">
-                                <div class="service-header">
-                                    <span class="service-price">R1234</span>
-                                </div>
-                                <h3>Facials</h3>
-                                <p>Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion.</p>
-                                <a href="facials.html" class="view-more">View More</a>
-                            </div>
-                        </div>
+                <div id="middle-border"></div>
+                <div id="right-zone">
+                    <div class="content-overlay">
+                        <h1 id="service-title">Micro needling</h1>
+                        <p id="service-desc">Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow.</p>
+                        <a id="service-link" href="micro-needling.html" class="view-more">View More</a>
                     </div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -199,7 +158,6 @@
         <p class="footer-copy">© 2025 Full Circle Aesthetics. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

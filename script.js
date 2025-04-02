@@ -1,3 +1,4 @@
+// Smooth scrolling for navigation links
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -14,6 +15,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
+// Hamburger menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -21,6 +23,7 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Fade-in animation for sections
 const sections = document.querySelectorAll('section');
 const options = {
     threshold: 0.2
@@ -40,6 +43,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
+// Add fade animation styles dynamically
 const style = document.createElement('style');
 style.textContent = `
     .fade-start {
@@ -54,63 +58,53 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Swiper initialization
-let swiper;
+// Services background image and description animation
+const radioButtons = document.querySelectorAll('input[name="basic_carousel"]');
+const rightZone = document.getElementById('right-zone');
+const serviceTitle = document.getElementById('service-title');
+const serviceDesc = document.getElementById('service-desc');
+const serviceLink = document.getElementById('service-link');
 
-function initSwiper() {
-    if (window.innerWidth > 768) {
-        if (!swiper) {
-            swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                spaceBetween: 10, // Reduced from 30 to make gaps smaller
-                centeredSlides: true,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: true,
-                },
-                navigation: {
-                    nextEl: '.services-next',
-                    prevEl: '.services-prev',
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 5, // Reduced from 20
-                    },
-                    480: {
-                        slidesPerView: 3,
-                        spaceBetween: 5, // Reduced from 10
-                    },
-                },
-            });
-
-            document.querySelectorAll('.swiper-slide').forEach(slide => {
-                slide.addEventListener('click', () => {
-                    swiper.autoplay.stop();
-                });
-            });
+radioButtons.forEach((radio) => {
+    radio.addEventListener('change', () => {
+        // Update background image
+        const bg = radio.getAttribute('data-bg');
+        if (bg) {
+            rightZone.style.backgroundImage = `url(${bg})`;
+            rightZone.style.backgroundSize = 'cover';
+            rightZone.style.backgroundPosition = 'center';
+            rightZone.style.transition = 'background-image 0.5s ease-in-out';
         }
-    } else {
-        if (swiper) {
-            swiper.destroy(true, true); // Destroy Swiper on mobile
-            swiper = null;
-        }
-    }
-}
 
-// Initial call
-initSwiper();
+        // Update description content
+        const title = radio.getAttribute('data-title');
+        const desc = radio.getAttribute('data-desc');
+        const link = radio.getAttribute('data-link');
 
-// Handle resize
-window.addEventListener('resize', () => {
-    initSwiper();
+        // Reset animation by removing and re-adding the animation class
+        serviceTitle.classList.remove('animate');
+        serviceDesc.classList.remove('animate');
+        serviceLink.classList.remove('animate');
+
+        // Force reflow to restart animation
+        void serviceTitle.offsetWidth;
+        void serviceDesc.offsetWidth;
+        void serviceLink.offsetWidth;
+
+        // Update content
+        serviceTitle.textContent = title;
+        serviceDesc.textContent = desc;
+        serviceLink.setAttribute('href', link);
+
+        // Trigger animation
+        serviceTitle.classList.add('animate');
+        serviceDesc.classList.add('animate');
+        serviceLink.classList.add('animate');
+    });
 });
 
-document.querySelector('.services-prev').addEventListener('click', () => {
-    swiper.slidePrev();
-});
-
-document.querySelector('.services-next').addEventListener('click', () => {
-    swiper.slideNext();
+// Trigger default background and description on load
+window.addEventListener('DOMContentLoaded', () => {
+    const selected = document.querySelector('input[name="basic_carousel"]:checked');
+    if (selected) selected.dispatchEvent(new Event('change'));
 });
