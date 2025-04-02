@@ -97,50 +97,46 @@
     opacity: 0.75;
     cursor: pointer;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ label.label_strawberry:before {
+  body #scene #left-zone .list li.item input[type=radio] ~ label.label_microneedling:before {
     content: " ";
     display: block;
     position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/83067-200.png");
     background-position: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ label.label_banana:before {
+  body #scene #left-zone .list li.item input[type=radio] ~ label.label_lazerHairRemoval:before {
     content: " ";
     display: block;
     position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/53209-200.png");
     background-position: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ label.label_apple:before {
+  body #scene #left-zone .list li.item input[type=radio] ~ label.label_ChemicalPeels:before {
     content: " ";
     display: block;
     position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/14333-200.png");
     background-position: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ label.label_orange:before {
+  body #scene #left-zone .list li.item input[type=radio] ~ label.label_Facials:before {
     content: " ";
     display: block;
     position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/9636-200.png");
     background-position: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
@@ -162,49 +158,25 @@
     justify-content: center;
     flex-direction: column;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_strawberry .picto {
+  /* body #scene #left-zone .list li.item input[type=radio] ~ .content.content_microneedling .picto {
     height: 100px;
     width: 100px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/83067-200.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  } */
+  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_microneedling h1 {
+    color: #000000;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_strawberry h1 {
-    color: #419ad6;
+  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_lazerHairRemoval h1 {
+    color: #000000;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_banana .picto {
-    height: 100px;
-    width: 100px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/53209-200.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_ChemicalPeels h1 {
+    color: #000000;
   }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_banana h1 {
-    color: #f5d76e;
-  }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_apple .picto {
-    height: 100px;
-    width: 100px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/14333-200.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_apple h1 {
-    color: #00b16a;
-  }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_orange .picto {
-    height: 100px;
-    width: 100px;
-    background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/9636-200.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_orange h1 {
-    color: #f27935;
+
+  body #scene #left-zone .list li.item input[type=radio] ~ .content.content_Facials h1 {
+    color: #000000;
   }
   body #scene #left-zone .list li.item input[type=radio] ~ .content h1:first-letter {
     text-transform: uppercase;
@@ -218,19 +190,19 @@
     -webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
             animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
-  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_strawberry {
+  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_microneedling {
     color: #419ad6;
     border-right: solid 4px #419ad6;
   }
-  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_banana {
+  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_lazerHairRemoval {
     color: #f5d76e;
     border-right: solid 4px #f5d76e;
   }
-  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_apple {
+  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_ChemicalPeels {
     color: #00b16a;
     border-right: solid 4px #00b16a;
   }
-  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_orange {
+  body #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_Facials {
     color: #f27935;
     border-right: solid 4px #f27935;
   }
@@ -256,3 +228,10 @@
     height: 100%;
     flex-grow: 3;
   }
+
+  #right-zone {
+    background-image: url('Image/Logo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
