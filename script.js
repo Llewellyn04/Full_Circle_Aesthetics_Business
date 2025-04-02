@@ -1,4 +1,3 @@
-// script.js
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -57,28 +56,13 @@ document.head.appendChild(style);
 
 // Swiper initialization
 let swiper;
-let prevButton, nextButton;
 
 function initSwiper() {
     if (window.innerWidth > 768) {
         if (!swiper) {
-            // Ensure buttons are in the DOM for desktop
-            prevButton = document.querySelector('.swiper-button-prev');
-            nextButton = document.querySelector('.swiper-button-next');
-            if (!prevButton) {
-                prevButton = document.createElement('div');
-                prevButton.className = 'swiper-button-prev';
-                document.querySelector('.swiper-container').appendChild(prevButton);
-            }
-            if (!nextButton) {
-                nextButton = document.createElement('div');
-                nextButton.className = 'swiper-button-next';
-                document.querySelector('.swiper-container').appendChild(nextButton);
-            }
-
             swiper = new Swiper('.swiper-container', {
                 slidesPerView: 3,
-                spaceBetween: 30,
+                spaceBetween: 10, // Reduced from 30 to make gaps smaller
                 centeredSlides: true,
                 loop: true,
                 autoplay: {
@@ -86,17 +70,17 @@ function initSwiper() {
                     disableOnInteraction: true,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.services-next',
+                    prevEl: '.services-prev',
                 },
                 breakpoints: {
                     768: {
                         slidesPerView: 3,
-                        spaceBetween: 20,
+                        spaceBetween: 5, // Reduced from 20
                     },
                     480: {
                         slidesPerView: 3,
-                        spaceBetween: 10,
+                        spaceBetween: 5, // Reduced from 10
                     },
                 },
             });
@@ -112,11 +96,6 @@ function initSwiper() {
             swiper.destroy(true, true); // Destroy Swiper on mobile
             swiper = null;
         }
-        // Remove navigation buttons on mobile
-        prevButton = document.querySelector('.swiper-button-prev');
-        nextButton = document.querySelector('.swiper-button-next');
-        if (prevButton) prevButton.remove();
-        if (nextButton) nextButton.remove();
     }
 }
 
@@ -126,4 +105,12 @@ initSwiper();
 // Handle resize
 window.addEventListener('resize', () => {
     initSwiper();
+});
+
+document.querySelector('.services-prev').addEventListener('click', () => {
+    swiper.slidePrev();
+});
+
+document.querySelector('.services-next').addEventListener('click', () => {
+    swiper.slideNext();
 });
