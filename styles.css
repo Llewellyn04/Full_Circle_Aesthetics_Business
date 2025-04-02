@@ -226,8 +226,8 @@ h2::after {
     display: flex;
     align-items: center;
     justify-content: left;
-    width: 1000px;
-    height: 400px;
+    width: 100%;
+    height: 50vh;
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -277,7 +277,7 @@ h2::after {
     cursor: pointer;
 }
 
-#scene #left-zone .list li.item input[type=radio] ~ label.label_microneedling:before {
+/* #scene #left-zone .list li.item input[type=radio] ~ label.label_microneedling:before {
     content: " ";
     display: block;
     position: absolute;
@@ -287,66 +287,31 @@ h2::after {
     background-position: center;
     background-size: 75% 75%;
     background-repeat: no-repeat;
-}
+} */
 
-#scene #left-zone .list li.item input[type=radio] ~ label.label_lazerHairRemoval:before {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-    background-position: center;
-    background-size: 75% 75%;
-    background-repeat: no-repeat;
-}
-
-#scene #left-zone .list li.item input[type=radio] ~ label.label_ChemicalPeels:before {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-    background-position: center;
-    background-size: 75% 75%;
-    background-repeat: no-repeat;
-}
-
-#scene #left-zone .list li.item input[type=radio] ~ label.label_Facials:before {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-    background-position: center;
-    background-size: 75% 75%;
-    background-repeat: no-repeat;
-}
 
 #scene #left-zone .list li.item input[type=radio]:checked ~ label {
     opacity: 1;
 }
 
 #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_microneedling {
-    color: #419ad6;
-    border-right: solid 4px #419ad6;
+    color: var(--charcoal);
+    border-right: solid 4px var(--charcoal);
 }
 
 #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_lazerHairRemoval {
-    color: #f5d76e;
-    border-right: solid 4px #f5d76e;
+    color: var(--charcoal);
+    border-right: solid 4px var(--charcoal);
 }
 
 #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_ChemicalPeels {
-    color: #00b16a;
-    border-right: solid 4px #00b16a;
+    color: var(--charcoal);
+    border-right: solid 4px var(--charcoal);
 }
 
 #scene #left-zone .list li.item input[type=radio]:checked ~ label.label_Facials {
-    color: #f27935;
-    border-right: solid 4px #f27935;
+    color: var(--charcoal);
+    border-right: solid 4px var(--charcoal);
 }
 
 #scene #middle-border {
@@ -403,13 +368,14 @@ h2::after {
 
 #scene #right-zone .content-overlay .view-more {
     font-size: 14px;
-    color: var(--white);
-    text-decoration: underline;
+    color: var(--charcoal);
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 #scene #right-zone .content-overlay .view-more:hover {
-    color: var(--light-grey);
+    color: var(--charcoal);
+    
 }
 
 /* Why Choose Us Section */
