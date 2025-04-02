@@ -1,10 +1,10 @@
-/* Define color variables at the root level */
+/* styles.css */
 :root {
-    --black: #1b1b1b; /* Updated black */
-    --charcoal: #2E2E2E; /* Updated dark grey */
-    --grey: #666666; /* Intermediate grey for text and borders */
-    --light-grey: #B0B0B0; /* Updated light grey */
-    --white: #FFFFFF; /* White remains the same */
+    --black: #1b1b1b;
+    --charcoal: #2E2E2E;
+    --grey: #666666;
+    --light-grey: #B0B0B0;
+    --white: #FFFFFF;
 }
 
 * {
@@ -36,18 +36,18 @@ h1, h2, h3 {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    height: 70px; /* Normal nav height */
+    height: 70px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 8px; /* Default gap */
-    flex-shrink: 0; /* Prevent shrinking too much */
+    gap: 8px;
+    flex-shrink: 0;
 }
 
 .logo-img {
-    height: 50px; /* Default logo size */
+    height: 50px;
     width: auto;
 }
 
@@ -56,7 +56,7 @@ h1, h2, h3 {
     font-weight: 700;
     color: var(--white);
     font-family: 'Playfair Display', serif;
-    white-space: nowrap; /* Prevent text from wrapping */
+    white-space: nowrap;
     margin-left: 10px;
 }
 
@@ -71,13 +71,11 @@ h1, h2, h3 {
     list-style: none;
     display: flex;
     align-items: center;
-    font-family: playfair display;
-
+    font-family: 'Playfair Display', serif;
 }
 
 .nav-links li {
     margin-left: 30px;
-    
 }
 
 .nav-links a {
@@ -112,7 +110,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better contrast */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -124,7 +122,7 @@ h1, h2, h3 {
 }
 
 .hero-logo {
-    width: 530px; /* Large logo size */
+    width: 530px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -222,57 +220,135 @@ h2::after {
 /* Services Section */
 .services {
     background: var(--charcoal);
+    padding: 80px 0;
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.swiper-container {
+    position: relative;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 300px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.swiper-slide-active {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
 }
 
 .service-item {
-    position: relative;
-    text-align: center;
-    transition: transform 0.3s;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* .service-item:hover {
-    transform: scale(1.05);
-} */
+.service-item:hover {
+    transform: translateY(-5px);
+}
 
-.service-item img {
+.service-image {
     width: 100%;
-    height: 200px; /* Default height for desktop */
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px 10px 0 0; /* Rounded top corners only */
     transition: transform 0.5s ease;
-    display: block; /* Ensure no extra space below the image */
 }
 
-/* .service-item:hover img {
+.service-item:hover .service-image img {
     transform: scale(1.1);
-} */
-
-.service-item .overlay {
-    position: relative; /* Static positioning */
-    background: var(--black);
-    color: var(--white);
-    padding: 15px;
-    text-align: center;
-    border-radius: 0 0 10px 10px; /* Rounded bottom corners only */
-    font-size: 16px;
-    margin-top: 0; /* Ensure no gap between overlay and image */
 }
 
-.service-item .overlay p {
-    margin: 0; /* Remove default margins on the <p> tag */
-    padding: 0; /* Remove default padding on the <p> tag */
-    line-height: 1.2; /* Slightly increased for better readability */
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+.service-content {
+    padding: 20px;
+    color: var(--white);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.service-creator {
+    font-size: 14px;
+    color: var(--light-grey);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.service-creator::before {
+    content: '👤';
+    font-size: 16px;
+}
+
+.service-content h3 {
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.service-content p {
+    font-size: 14px;
+    color: var(--light-grey);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.view-more {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.view-more:hover {
+    color: var(--light-grey);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--white); /* Ensure the container has white color */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 20px;
+    color: var(--white); /* Explicitly set the arrow icons to white */
 }
 
 /* Why Choose Us Section */
@@ -324,8 +400,6 @@ h2::after {
 .gallery-item:hover img {
     transform: scale(1.1);
 }
-
-
 
 .gallery-item:hover .overlay {
     transform: translateY(0);
@@ -498,7 +572,6 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Navigation */
     .navbar {
         padding: 10px 15px;
         height: 60px;
@@ -546,7 +619,6 @@ footer {
         font-size: 16px;
     }
 
-    /* Hero Section */
     .hero {
         height: 80vh;
     }
@@ -568,13 +640,12 @@ footer {
         font-size: 14px;
     }
 
-    /* General Section Styling */
     section {
         padding: 60px 0;
     }
 
     .container {
-        padding: 0 15px; /* Reduce padding for smaller screens */
+        padding: 0 15px;
     }
 
     h2 {
@@ -585,7 +656,6 @@ footer {
         width: 80px;
     }
 
-    /* About Section */
     .about {
         padding: 60px 0;
     }
@@ -605,36 +675,76 @@ footer {
         object-fit: cover;
     }
 
-    /* Services Section */
-    .service-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 20px;
+    /* Services Section Mobile Adjustments */
+    .swiper-container {
+        padding: 0;
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        max-width: 100%;
+        opacity: 1;
+        margin-bottom: 20px;
+        transform: none !important;
+        flex-shrink: 0;
+    }
+
+    .swiper-slide-active {
+        transform: none !important;
     }
 
     .service-item {
-        max-width: 100%; /* Ensure it takes full width */
+        width: 100%;
     }
 
-    .service-item img {
-        height: 180px; /* Adjusted height for mobile */
+    .service-image {
+        height: 180px;
     }
 
-    .service-item .overlay {
-        font-size: 14px;
-        padding: 10px; /* Reduced padding for mobile */
-        margin-top: 0; /* Ensure no gap */
+    .service-content {
+        padding: 15px;
     }
 
-    .service-item .overlay p {
-        margin: 0;
-        padding: 0;
-        line-height: 1.2;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .service-header {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    /* Why Choose Us Section */
+    .service-price {
+        font-size: 20px;
+    }
+
+    .service-creator {
+        font-size: 12px;
+    }
+
+    .service-content h3 {
+        font-size: 18px;
+    }
+
+    .service-content p {
+        font-size: 13px;
+    }
+
+    .view-more {
+        font-size: 13px;
+    }
+
+    /* Hide navigation buttons on mobile */
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-container .swiper-button-prev,
+    .swiper-container .swiper-button-next {
+        display: none !important;
+    }
+
     .why-us {
         padding: 60px 0;
     }
@@ -644,7 +754,6 @@ footer {
         padding: 0 10px;
     }
 
-    /* Mission and Vision Section */
     .mv-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -662,7 +771,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Values Section */
     .values {
         padding: 60px 0;
     }
@@ -685,7 +793,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Footer */
     .footer-container {
         flex-direction: column;
         align-items: center;
@@ -707,10 +814,9 @@ footer {
 }
 
 @media (max-width: 480px) {
-    /* Navigation */
     .navbar {
         padding: 8px 10px;
-        height: 80px; /* Increased height for stacked layout */
+        height: 80px;
         flex-wrap: wrap;
     }
 
@@ -719,9 +825,9 @@ footer {
     }
 
     .logo-container {
-        flex-direction: row; /* Ensure logo image and text are side by side */
-        align-items: center; /* Align items vertically */
-        gap: 5px; /* Add small gap between image and text */
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
     }
 
     .logo-img {
@@ -730,7 +836,7 @@ footer {
 
     .logo-text {
         font-size: 14px;
-        margin-left: 0; /* Remove extra margin */
+        margin-left: 0;
     }
 
     .hamburger {
@@ -742,7 +848,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Hero Section */
     .hero {
         height: 70vh;
     }
@@ -764,13 +869,12 @@ footer {
         font-size: 12px;
     }
 
-    /* General Section Styling */
     section {
         padding: 40px 0;
     }
 
     .container {
-        padding: 0 10px; /* Further reduce padding for very small screens */
+        padding: 0 10px;
     }
 
     h2 {
@@ -781,7 +885,6 @@ footer {
         width: 60px;
     }
 
-    /* About Section */
     .about {
         padding: 40px 0;
     }
@@ -794,27 +897,34 @@ footer {
         max-height: 250px;
     }
 
-    /* Services Section */
-    .service-item img {
-        height: 150px; /* Further reduced height for very small screens */
+    .service-image {
+        height: 150px;
     }
 
-    .service-item .overlay {
+    .service-content {
+        padding: 10px;
+    }
+
+    .service-price {
+        font-size: 18px;
+    }
+
+    .service-creator {
+        font-size: 11px;
+    }
+
+    .service-content h3 {
+        font-size: 16px;
+    }
+
+    .service-content p {
         font-size: 12px;
-        padding: 8px; /* Further reduced padding */
-        margin-top: 0; /* Ensure no gap */
     }
 
-    .service-item .overlay p {
-        margin: 0;
-        padding: 0;
-        line-height: 1.2;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .view-more {
+        font-size: 12px;
     }
 
-    /* Why Choose Us Section */
     .why-us {
         padding: 40px 0;
     }
@@ -823,7 +933,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Mission and Vision Section */
     .mv-grid {
         gap: 15px;
     }
@@ -840,7 +949,6 @@ footer {
         font-size: 13px;
     }
 
-    /* Values Section */
     .values {
         padding: 40px 0;
     }
@@ -861,7 +969,6 @@ footer {
         font-size: 13px;
     }
 
-    /* Footer */
     .footer-contact h3, .footer-map h3 {
         font-size: 18px;
     }

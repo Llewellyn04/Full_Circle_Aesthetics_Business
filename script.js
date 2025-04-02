@@ -1,11 +1,11 @@
-// Smooth Scroll for Navigation Links
+// script.js
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href.startsWith('#')) {
             e.preventDefault();
             const section = document.querySelector(href);
-            const offset = document.querySelector('.navbar').offsetHeight; // Dynamically get navbar height
+            const offset = document.querySelector('.navbar').offsetHeight;
             const sectionPosition = section.offsetTop - offset;
             window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
             if (window.innerWidth <= 768) {
@@ -15,7 +15,6 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
-// Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -23,7 +22,6 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Fade-in Animation for Sections
 const sections = document.querySelectorAll('section');
 const options = {
     threshold: 0.2
@@ -43,7 +41,6 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Add fade-in CSS dynamically
 const style = document.createElement('style');
 style.textContent = `
     .fade-start {
@@ -58,28 +55,75 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// // Gallery Modal Interaction
-// if (document.querySelector('.gallery')) {
-//     const galleryItems = document.querySelectorAll('.gallery-item');
-//     const modal = document.querySelector('.gallery-modal');
-//     const modalImg = document.querySelector('.modal-content');
-//     const closeModal = document.querySelector('.close-modal');
+// Swiper initialization
+let swiper;
+let prevButton, nextButton;
 
-//     galleryItems.forEach(item => {
-//         item.addEventListener('click', () => {
-//             const imgSrc = item.querySelector('img').src;
-//             modalImg.src = imgSrc;
-//             modal.classList.add('active');
-//         });
-//     });
+function initSwiper() {
+    if (window.innerWidth > 768) {
+        if (!swiper) {
+            // Ensure buttons are in the DOM for desktop
+            prevButton = document.querySelector('.swiper-button-prev');
+            nextButton = document.querySelector('.swiper-button-next');
+            if (!prevButton) {
+                prevButton = document.createElement('div');
+                prevButton.className = 'swiper-button-prev';
+                document.querySelector('.swiper-container').appendChild(prevButton);
+            }
+            if (!nextButton) {
+                nextButton = document.createElement('div');
+                nextButton.className = 'swiper-button-next';
+                document.querySelector('.swiper-container').appendChild(nextButton);
+            }
 
-//     closeModal.addEventListener('click', () => {
-//         modal.classList.remove('active');
-//     });
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    480: {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                },
+            });
 
-//     modal.addEventListener('click', (e) => {
-//         if (e.target === modal) {
-//             modal.classList.remove('active');
-//         }
-//     });
-// }
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.addEventListener('click', () => {
+                    swiper.autoplay.stop();
+                });
+            });
+        }
+    } else {
+        if (swiper) {
+            swiper.destroy(true, true); // Destroy Swiper on mobile
+            swiper = null;
+        }
+        // Remove navigation buttons on mobile
+        prevButton = document.querySelector('.swiper-button-prev');
+        nextButton = document.querySelector('.swiper-button-next');
+        if (prevButton) prevButton.remove();
+        if (nextButton) nextButton.remove();
+    }
+}
+
+// Initial call
+initSwiper();
+
+// Handle resize
+window.addEventListener('resize', () => {
+    initSwiper();
+});

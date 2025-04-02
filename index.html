@@ -6,9 +6,9 @@
     <title>Full Circle Aesthetics</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="logo-container">
             <img src="Image/LogoWhite.png" alt="" class="logo-img">
@@ -24,7 +24,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <img src="Image/LogoWhite.png" alt="Full Circle Aesthetics Logo" class="hero-logo">
@@ -34,7 +33,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Full Circle Aesthetics</h2>
@@ -51,28 +49,75 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 style="color: white;">Our Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling"><div class="overlay"><p>Micro Needling</p></div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="service-item">
+                            <div class="service-image">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-header">
+                                    <span class="service-price">R1234</span>
+                                </div>
+                                <h3>Micro Needling</h3>
+                                <p>Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow.</p>
+                                <!-- <a href="#" class="view-more"></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-item">
+                            <div class="service-image">
+                                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Laser Hair Removal">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-header">
+                                    <span class="service-price">R1234</span>
+                                </div>
+                                <h3>Laser Hair Removal</h3>
+                                <p>Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-item">
+                            <div class="service-image">
+                                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Chemical Peels">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-header">
+                                    <span class="service-price">R1234</span>
+                                </div>
+                                <h3>Chemical Peels</h3>
+                                <p>Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-item">
+                            <div class="service-image">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" alt="Facials">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-header">
+                                    <span class="service-price">R1234</span>
+                                </div>
+                                <h3>Facials</h3>
+                                <p>Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Laser Hair Removal"><div class="overlay"><p>Laser Hair Removal</p></div>
-                </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Chemical Peels"><div class="overlay"><p>Chemical Peels</p></div>
-                </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" alt="Facials"><div class="overlay"><p>Facials</p></div>
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us">
         <div class="container">
             <h2>Why Choose Full Circle Aesthetics</h2>
@@ -82,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Mission and Vision Section -->
     <section id="mission-vision" class="mission-vision">
         <div class="container">
             <h2 style="color: white;">Mission & Vision</h2>
@@ -99,7 +143,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section id="values" class="values">
         <div class="container">
             <h2>Our Values</h2>
@@ -128,7 +171,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-contact">
@@ -146,11 +188,11 @@
                 <p>123 Anywhere St., Any City, Pretoria</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.693641747326!2d28.185374315051!3d-25.746891983637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619f389f2e2f%3A0x1b6e5e2f5e2f5e2f!2sPretoria%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1698765432100!5m2!1sen!2sza" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
         </div>
         <p class="footer-copy">© 2025 Full Circle Aesthetics. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
