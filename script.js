@@ -1,11 +1,11 @@
-// Smooth Scroll for Navigation Links
+// Smooth scrolling for navigation links
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         if (href.startsWith('#')) {
             e.preventDefault();
             const section = document.querySelector(href);
-            const offset = document.querySelector('.navbar').offsetHeight; // Dynamically get navbar height
+            const offset = document.querySelector('.navbar').offsetHeight;
             const sectionPosition = section.offsetTop - offset;
             window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
             if (window.innerWidth <= 768) {
@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
-// Hamburger Menu Toggle
+// Hamburger menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -23,7 +23,7 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Fade-in Animation for Sections
+// Fade-in animation for sections
 const sections = document.querySelectorAll('section');
 const options = {
     threshold: 0.2
@@ -43,7 +43,7 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Add fade-in CSS dynamically
+// Add fade animation styles dynamically
 const style = document.createElement('style');
 style.textContent = `
     .fade-start {
@@ -58,28 +58,53 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// // Gallery Modal Interaction
-// if (document.querySelector('.gallery')) {
-//     const galleryItems = document.querySelectorAll('.gallery-item');
-//     const modal = document.querySelector('.gallery-modal');
-//     const modalImg = document.querySelector('.modal-content');
-//     const closeModal = document.querySelector('.close-modal');
+// Services background image and description animation
+const radioButtons = document.querySelectorAll('input[name="basic_carousel"]');
+const rightZone = document.getElementById('right-zone');
+const serviceTitle = document.getElementById('service-title');
+const serviceDesc = document.getElementById('service-desc');
+const serviceLink = document.getElementById('service-link');
 
-//     galleryItems.forEach(item => {
-//         item.addEventListener('click', () => {
-//             const imgSrc = item.querySelector('img').src;
-//             modalImg.src = imgSrc;
-//             modal.classList.add('active');
-//         });
-//     });
+radioButtons.forEach((radio) => {
+    radio.addEventListener('change', () => {
+        // Update background image
+        const bg = radio.getAttribute('data-bg');
+        if (bg) {
+            rightZone.style.backgroundImage = `url(${bg})`;
+            rightZone.style.backgroundSize = 'cover';
+            rightZone.style.backgroundPosition = 'center';
+            rightZone.style.transition = 'background-image 0.5s ease-in-out';
+        }
 
-//     closeModal.addEventListener('click', () => {
-//         modal.classList.remove('active');
-//     });
+        // Update description content
+        const title = radio.getAttribute('data-title');
+        const desc = radio.getAttribute('data-desc');
+        const link = radio.getAttribute('data-link');
 
-//     modal.addEventListener('click', (e) => {
-//         if (e.target === modal) {
-//             modal.classList.remove('active');
-//         }
-//     });
-// }
+        // Reset animation by removing and re-adding the animation class
+        serviceTitle.classList.remove('animate');
+        serviceDesc.classList.remove('animate');
+        serviceLink.classList.remove('animate');
+
+        // Force reflow to restart animation
+        void serviceTitle.offsetWidth;
+        void serviceDesc.offsetWidth;
+        void serviceLink.offsetWidth;
+
+        // Update content
+        serviceTitle.textContent = title;
+        serviceDesc.textContent = desc;
+        serviceLink.setAttribute('href', link);
+
+        // Trigger animation
+        serviceTitle.classList.add('animate');
+        serviceDesc.classList.add('animate');
+        serviceLink.classList.add('animate');
+    });
+});
+
+// Trigger default background and description on load
+window.addEventListener('DOMContentLoaded', () => {
+    const selected = document.querySelector('input[name="basic_carousel"]:checked');
+    if (selected) selected.dispatchEvent(new Event('change'));
+});

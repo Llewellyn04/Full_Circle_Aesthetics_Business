@@ -1,0 +1,593 @@
+:root {
+    --black: #1b1b1b;
+    --charcoal: #2E2E2E;
+    --grey: #666666;
+    --light-grey: #B0B0B0;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: var(--charcoal);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    height: 70px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+    margin-left: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 400;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--light-grey);
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+    background: var(--charcoal);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 70px; /* Ensure it appears below the first navbar */
+    margin-bottom: 10px; /* Reduce the gap below the secondary nav */
+}
+
+.secondary-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.secondary-nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.secondary-nav a:hover {
+    color: var(--light-grey);
+}
+
+.secondary-nav a.active {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.secondary-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+/* Service Details Section */
+.service-details {
+    background: var(--white);
+    margin-top: 1px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 40px 0; /* Added padding for better spacing */
+}
+
+.service-content h1 {
+    width: 100%;
+    font-size: 40px;
+    color: var(--charcoal);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.service-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--charcoal);
+    border-radius: 2px;
+}
+
+.service-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: 700px; /* Default height for desktop */
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-text {
+    flex: 1;
+    min-width: 300px;
+    color: var(--charcoal);
+}
+
+.service-text h2 {
+    font-size: 30px;
+    color: var(--black);
+    margin-bottom: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.service-text h2:hover {
+    color: var(--grey);
+}
+
+.service-text p {
+    font-size: 16px;
+    color: var(--grey);
+    margin-bottom: 20px;
+}
+
+.service-text ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.service-text ul li {
+    font-size: 16px;
+    color: var(--grey);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-text ul li:hover {
+    color: var(--charcoal);
+}
+
+.service-text ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--charcoal);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--charcoal);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: var(--black);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-contact, .footer-hours, .footer-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-contact h3, .footer-hours h3, .footer-map h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.footer-contact p, .footer-hours p, .footer-map p {
+    margin: 10px 0;
+    color: var(--light-grey);
+}
+
+.footer-contact a {
+    color: var(--light-grey);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: var(--white);
+}
+
+.footer-map iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--light-grey);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+        height: 60px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--charcoal);
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px; /* Added padding for better touch target */
+    }
+
+    .logo-container {
+        gap: 5px;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 40px; /* Reduced logo size for mobile */
+        width: auto;
+    }
+
+    .logo-text {
+        font-size: 18px; /* Reduced font size for mobile */
+    }
+
+    .secondary-nav {
+        margin-top: 60px; /* Adjusted for smaller navbar height */
+        padding: 5px 0; /* Reduced padding for mobile */
+    }
+
+    .secondary-nav ul {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 15px; /* Reduced gap for mobile */
+        padding: 0 10px; /* Added padding to prevent edge touching */
+    }
+
+    .secondary-nav a {
+        font-size: 14px; /* Reduced font size for mobile */
+        padding: 8px 15px; /* Adjusted padding for touch targets */
+    }
+
+    .secondary-nav a.active::after {
+        height: 2px; /* Thinner underline for mobile */
+    }
+
+    .service-details {
+        margin-top: 0; /* Adjusted to account for secondary nav */
+    }
+
+    .service-content {
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for mobile */
+        padding: 20px 0; /* Reduced padding for mobile */
+    }
+
+    .service-content h1 {
+        font-size: 28px; /* Reduced font size for mobile */
+        margin-bottom: 20px; /* Reduced margin for mobile */
+    }
+
+    .service-content h1::after {
+        width: 80px; /* Smaller underline for mobile */
+        height: 2px; /* Thinner underline for mobile */
+    }
+
+    .service-image {
+        min-width: 100%; /* Full width on mobile */
+    }
+
+    .service-image img {
+        height: 350px; /* Reduced height for mobile */
+    }
+
+    .service-text {
+        min-width: 100%; /* Full width on mobile */
+    }
+
+    .service-text h2 {
+        font-size: 22px; /* Reduced font size for mobile */
+    }
+
+    .service-text p, .service-text ul li {
+        font-size: 14px; /* Reduced font size for mobile */
+    }
+
+    .service-text ul li {
+        padding-left: 15px; /* Adjusted padding for mobile */
+    }
+
+    .btn {
+        padding: 10px 25px; /* Adjusted padding for touch targets */
+        font-size: 14px; /* Reduced font size for mobile */
+        width: 100%; /* Full width button for easier tapping */
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reduced gap for mobile */
+    }
+
+    .footer-contact, .footer-hours, .footer-map {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact h3, .footer-hours h3, .footer-map h3 {
+        font-size: 18px; /* Reduced font size for mobile */
+    }
+
+    .footer-contact p, .footer-hours p, .footer-map p {
+        font-size: 14px;
+    }
+
+    .footer-map iframe {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px;
+        height: 80px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        top: 80px;
+    }
+
+    .logo-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 14px;
+        margin-left: 25%;
+    }
+
+    .hamburger {
+        font-size: 24px;
+        align-self: center;
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Further reduced font size */
+        padding: 8px; /* Adjusted padding for touch targets */
+    }
+
+    .secondary-nav {
+        margin-top: 60px; /* Adjusted for smaller navbar height */
+        padding: 5px 0;
+    }
+
+    .secondary-nav ul {
+        gap: 10px; /* Further reduced gap for smaller screens */
+        flex-direction: column; /* Stack links vertically on very small screens */
+        align-items: center;
+    }
+
+    .secondary-nav a {
+        font-size: 13px; /* Further reduced font size */
+        padding: 6px 12px; /* Adjusted padding for touch targets */
+    }
+
+    .service-details {
+        margin-top: 0;
+    }
+
+    .container {
+        padding: 0 15px; /* Reduced padding for smaller screens */
+    }
+
+    .service-content {
+        gap: 15px; /* Further reduced gap */
+        padding: 15px 0; /* Further reduced padding */
+    }
+
+    .service-content h1 {
+        font-size: 24px; /* Further reduced font size */
+        margin-bottom: 15px;
+    }
+
+    .service-content h1::after {
+        width: 60px; /* Smaller underline for smaller screens */
+    }
+
+    .service-image img {
+        height: 250px; /* Further reduced height for smaller screens */
+    }
+
+    .service-text h2 {
+        font-size: 20px; /* Further reduced font size */
+    }
+
+    .service-text p, .service-text ul li {
+        font-size: 13px; /* Further reduced font size */
+    }
+
+    .service-text ul li {
+        padding-left: 12px; /* Adjusted padding for smaller screens */
+    }
+
+    .btn {
+        padding: 8px 20px; /* Adjusted padding for touch targets */
+        font-size: 13px; /* Further reduced font size */
+    }
+
+    .footer-contact h3, .footer-hours h3, .footer-map h3 {
+        font-size: 16px; /* Further reduced font size */
+    }
+
+    .footer-contact p, .footer-hours p, .footer-map p {
+        font-size: 13px;
+    }
+
+    .footer-map iframe {
+        height: 120px; /* Further reduced height for smaller screens */
+    }
+
+    .footer-copy {
+        font-size: 12px;
+    }
+}

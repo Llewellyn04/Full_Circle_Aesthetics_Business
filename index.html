@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="logo-container">
             <img src="Image/LogoWhite.png" alt="" class="logo-img">
@@ -24,7 +23,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <img src="Image/LogoWhite.png" alt="Full Circle Aesthetics Logo" class="hero-logo">
@@ -34,7 +32,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Full Circle Aesthetics</h2>
@@ -51,28 +48,42 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 style="color: white;">Our Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Micro Needling"><div class="overlay"><p>Micro Needling</p></div>
+            <div id="scene">
+                <div id="left-zone">
+                    <ul class="list">
+                        <li class="item">
+                            <input type="radio" id="radio_microneedling" name="basic_carousel" value="Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow." checked="checked" data-bg="Image/microneedling.jpg" data-title="Micro needling" data-desc="Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow." data-link="micro-needling.html"/>
+                            <label class="label_microneedling" for="radio_microneedling">Micro needling</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_lazerHairRemoval" name="basic_carousel" value="Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results." data-bg="Image/lazer.jpg" data-title="Lazer Hair Removal" data-desc="Achieve smooth, hair-free skin with our safe and effective laser hair removal technology for long-lasting results." data-link="laser-hair-removal.html"/>
+                            <label class="label_lazerHairRemoval" for="radio_lazerHairRemoval">Lazer Hair Removal</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_chemicalPeels" name="basic_carousel" value="Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns." data-bg="Image/chemical.jpg" data-title="Chemical Peels" data-desc="Exfoliate and renew your skin with our customized chemical peels, designed to address your unique skin concerns." data-link="chemical-peels.html"/>
+                            <label class="label_ChemicalPeels" for="radio_chemicalPeels">Chemical peels</label>
+                        </li>
+                        <li class="item">
+                            <input type="radio" id="radio_facials" name="basic_carousel" value="Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion." data-bg="Image/Logo.png" data-title="Facials" data-desc="Indulge in a relaxing facial tailored to your skin type, leaving you with a radiant and refreshed complexion." data-link="facials.html"/>
+                            <label class="label_Facials" for="radio_facials">Facials</label>
+                        </li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Laser Hair Removal"><div class="overlay"><p>Laser Hair Removal</p></div>
-                </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" alt="Chemical Peels"><div class="overlay"><p>Chemical Peels</p></div>
-                </div>
-                <div class="service-item">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" alt="Facials"><div class="overlay"><p>Facials</p></div>
+                <div id="middle-border"></div>
+                <div id="right-zone">
+                    <div class="content-overlay">
+                        <h1 id="service-title">Micro needling</h1>
+                        <p id="service-desc">Stimulate collagen production and rejuvenate your skin with our advanced micro needling treatment for a youthful glow.</p>
+                        <a id="service-link" href="micro-needling.html" class="view-more btn">View More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us">
         <div class="container">
             <h2>Why Choose Full Circle Aesthetics</h2>
@@ -82,7 +93,6 @@
         </div>
     </section>
 
-    <!-- Mission and Vision Section -->
     <section id="mission-vision" class="mission-vision">
         <div class="container">
             <h2 style="color: white;">Mission & Vision</h2>
@@ -99,7 +109,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section id="values" class="values">
         <div class="container">
             <h2>Our Values</h2>
@@ -128,7 +137,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-contact">
@@ -146,11 +154,11 @@
                 <p>123 Anywhere St., Any City, Pretoria</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.693641747326!2d28.185374315051!3d-25.746891983637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619f389f2e2f%3A0x1b6e5e2f5e2f5e2f!2sPretoria%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1698765432100!5m2!1sen!2sza" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
         </div>
         <p class="footer-copy">© 2025 Full Circle Aesthetics. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
