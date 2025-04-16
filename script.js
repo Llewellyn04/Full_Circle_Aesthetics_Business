@@ -107,4 +107,20 @@ radioButtons.forEach((radio) => {
 window.addEventListener('DOMContentLoaded', () => {
     const selected = document.querySelector('input[name="basic_carousel"]:checked');
     if (selected) selected.dispatchEvent(new Event('change'));
+
+    // Secondary Navigation Active State
+    const secondaryNav = document.querySelector('.secondary-nav');
+    if (secondaryNav) {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const secondaryNavLinks = secondaryNav.querySelectorAll('a');
+
+        secondaryNavLinks.forEach(link => {
+            const linkPath = link.getAttribute('href').split('/').pop();
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
 });

@@ -24,7 +24,7 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
-/* Navigation */
+/* Primary Navigation */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -105,8 +105,8 @@ h1, h2, h3 {
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    margin-top: 70px; /* Ensure it appears below the first navbar */
-    margin-bottom: 10px; /* Reduce the gap below the secondary nav */
+    margin-top: 70px;
+    margin-bottom: 10px;
 }
 
 .secondary-nav ul {
@@ -116,6 +116,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .secondary-nav a {
@@ -135,6 +136,7 @@ h1, h2, h3 {
 .secondary-nav a.active {
     color: var(--white);
     font-weight: 700;
+    position: relative;
 }
 
 .secondary-nav a.active::after {
@@ -152,6 +154,7 @@ h1, h2, h3 {
 .service-details {
     background: var(--white);
     margin-top: 1px;
+    padding: 40px 0;
 }
 
 .container {
@@ -166,30 +169,6 @@ h1, h2, h3 {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    padding: 40px 0; /* Added padding for better spacing */
-}
-
-.service-content h1 {
-    width: 100%;
-    font-size: 40px;
-    color: var(--charcoal);
-    text-align: center;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    position: relative;
-    letter-spacing: 1px;
-}
-
-.service-content h1::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--charcoal);
-    border-radius: 2px;
 }
 
 .service-image {
@@ -200,8 +179,9 @@ h1, h2, h3 {
 
 .service-image img {
     width: 100%;
-    height: 700px; /* Default height for desktop */
+    height: 700px;
     object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -368,7 +348,7 @@ footer {
 
     .nav-links a {
         font-size: 16px;
-        padding: 10px; /* Added padding for better touch target */
+        padding: 10px;
     }
 
     .logo-container {
@@ -377,89 +357,79 @@ footer {
     }
 
     .logo-img {
-        height: 40px; /* Reduced logo size for mobile */
+        height: 40px;
         width: auto;
     }
 
     .logo-text {
-        font-size: 18px; /* Reduced font size for mobile */
+        font-size: 18px;
     }
 
     .secondary-nav {
-        margin-top: 60px; /* Adjusted for smaller navbar height */
-        padding: 5px 0; /* Reduced padding for mobile */
+        margin-top: 60px;
+        padding: 5px 0;
     }
 
     .secondary-nav ul {
-        flex-wrap: wrap; /* Allow wrapping for smaller screens */
-        gap: 15px; /* Reduced gap for mobile */
-        padding: 0 10px; /* Added padding to prevent edge touching */
+        gap: 15px;
+        padding: 0 10px;
     }
 
     .secondary-nav a {
-        font-size: 14px; /* Reduced font size for mobile */
-        padding: 8px 15px; /* Adjusted padding for touch targets */
+        font-size: 14px;
+        padding: 8px 15px;
     }
 
     .secondary-nav a.active::after {
-        height: 2px; /* Thinner underline for mobile */
+        height: 2px;
     }
 
     .service-details {
-        margin-top: 0; /* Adjusted to account for secondary nav */
+        margin-top: 0;
+        padding: 20px 0;
     }
 
     .service-content {
         flex-direction: column;
-        gap: 20px; /* Reduced gap for mobile */
-        padding: 20px 0; /* Reduced padding for mobile */
-    }
-
-    .service-content h1 {
-        font-size: 28px; /* Reduced font size for mobile */
-        margin-bottom: 20px; /* Reduced margin for mobile */
-    }
-
-    .service-content h1::after {
-        width: 80px; /* Smaller underline for mobile */
-        height: 2px; /* Thinner underline for mobile */
+        gap: 20px;
     }
 
     .service-image {
-        min-width: 100%; /* Full width on mobile */
+        min-width: 100%;
     }
 
     .service-image img {
-        height: 350px; /* Reduced height for mobile */
+        height: 350px;
+        border-radius: 8px;
     }
 
     .service-text {
-        min-width: 100%; /* Full width on mobile */
+        min-width: 100%;
     }
 
     .service-text h2 {
-        font-size: 22px; /* Reduced font size for mobile */
+        font-size: 22px;
     }
 
     .service-text p, .service-text ul li {
-        font-size: 14px; /* Reduced font size for mobile */
+        font-size: 14px;
     }
 
     .service-text ul li {
-        padding-left: 15px; /* Adjusted padding for mobile */
+        padding-left: 15px;
     }
 
     .btn {
-        padding: 10px 25px; /* Adjusted padding for touch targets */
-        font-size: 14px; /* Reduced font size for mobile */
-        width: 100%; /* Full width button for easier tapping */
+        padding: 10px 25px;
+        font-size: 14px;
+        width: 100%;
         text-align: center;
     }
 
     .footer-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Reduced gap for mobile */
+        gap: 20px;
     }
 
     .footer-contact, .footer-hours, .footer-map {
@@ -468,7 +438,7 @@ footer {
     }
 
     .footer-contact h3, .footer-hours h3, .footer-map h3 {
-        font-size: 18px; /* Reduced font size for mobile */
+        font-size: 18px;
     }
 
     .footer-contact p, .footer-hours p, .footer-map p {
@@ -512,71 +482,63 @@ footer {
     }
 
     .nav-links a {
-        font-size: 14px; /* Further reduced font size */
-        padding: 8px; /* Adjusted padding for touch targets */
+        font-size: 14px;
+        padding: 8px;
     }
 
     .secondary-nav {
-        margin-top: 60px; /* Adjusted for smaller navbar height */
+        margin-top: 60px;
         padding: 5px 0;
     }
 
     .secondary-nav ul {
-        gap: 10px; /* Further reduced gap for smaller screens */
-        flex-direction: column; /* Stack links vertically on very small screens */
+        gap: 10px;
+        flex-direction: column;
         align-items: center;
     }
 
     .secondary-nav a {
-        font-size: 13px; /* Further reduced font size */
-        padding: 6px 12px; /* Adjusted padding for touch targets */
+        font-size: 13px;
+        padding: 6px 12px;
     }
 
     .service-details {
         margin-top: 0;
+        padding: 15px 0;
     }
 
     .container {
-        padding: 0 15px; /* Reduced padding for smaller screens */
+        padding: 0 15px;
     }
 
     .service-content {
-        gap: 15px; /* Further reduced gap */
-        padding: 15px 0; /* Further reduced padding */
-    }
-
-    .service-content h1 {
-        font-size: 24px; /* Further reduced font size */
-        margin-bottom: 15px;
-    }
-
-    .service-content h1::after {
-        width: 60px; /* Smaller underline for smaller screens */
+        gap: 15px;
     }
 
     .service-image img {
-        height: 250px; /* Further reduced height for smaller screens */
+        height: 250px;
+        border-radius: 6px;
     }
 
     .service-text h2 {
-        font-size: 20px; /* Further reduced font size */
+        font-size: 20px;
     }
 
     .service-text p, .service-text ul li {
-        font-size: 13px; /* Further reduced font size */
+        font-size: 13px;
     }
 
     .service-text ul li {
-        padding-left: 12px; /* Adjusted padding for smaller screens */
+        padding-left: 12px;
     }
 
     .btn {
-        padding: 8px 20px; /* Adjusted padding for touch targets */
-        font-size: 13px; /* Further reduced font size */
+        padding: 8px 20px;
+        font-size: 13px;
     }
 
     .footer-contact h3, .footer-hours h3, .footer-map h3 {
-        font-size: 16px; /* Further reduced font size */
+        font-size: 16px;
     }
 
     .footer-contact p, .footer-hours p, .footer-map p {
@@ -584,7 +546,7 @@ footer {
     }
 
     .footer-map iframe {
-        height: 120px; /* Further reduced height for smaller screens */
+        height: 120px;
     }
 
     .footer-copy {
